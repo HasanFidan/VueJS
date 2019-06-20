@@ -6,13 +6,12 @@
     <div class="text-center">
     <img class="img-responsive" style="margin:0 auto;" src="./assets/logo.png">
     </div>
-    
-
-    
+  
     <div class="row">
 
       <div class="col-md-12 text-center">
-       <BtnTest @BroadCasting="EventHandler($event)"/>
+       <BtnTest @BroadCasting="EventHandler"/>
+       <History :historyList="historyList" />
 
       </div>
 
@@ -23,21 +22,22 @@
 
 <script>
 import BtnTest from './components/ButtonTest'
+import History from './components/History'
 
 export default {
   name: 'App',
   data() {
-     return {emittedValue : ""}
+     return {emittedValue : "",historyList : []}
 
   },
   components: {
-    BtnTest
+    BtnTest,History
   },
   methods:{
       EventHandler(event)
       {
-        alert(event);
         this.emittedValue = event;
+        this.historyList.push(this.emittedValue);
       }
 
   }

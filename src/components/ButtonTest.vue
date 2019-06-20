@@ -15,9 +15,7 @@
       <strong style="font-weight:bold;font-size:18">{{TranslationResult}}</strong>
       </div>
       <br>
-
-
-
+      
      <button type="submit" class="btn btn-primary btn-block" > {{msg}} </button>
   </form>
     
